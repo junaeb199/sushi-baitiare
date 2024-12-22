@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>¿Vamos a sushi?</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 15%;
+      background-color: #f8f9fa;
+    }
+    h1 {
+      font-size: 2rem;
+      color: #333;
+    }
+    button {
+      font-size: 1rem;
+      padding: 10px 20px;
+      margin: 10px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: transform 0.3s;
+    }
+    button#yes {
+      background-color: #28a745;
+      color: white;
+    }
+    button#no {
+      background-color: #dc3545;
+      color: white;
+    }
+    button:hover {
+      transform: scale(1.1);
+    }
+  </style>
+</head>
+<body>
+  <h1>¿Quieres ir de cita a comer sushi conmigo?</h1>
+  <button id="yes">Sí</button>
+  <button id="no">No</button>
+
+  <script>
+    const noButton = document.getElementById('no');
+
+    noButton.addEventListener('mouseenter', () => {
+      const randomX = Math.floor(Math.random() * window.innerWidth * 0.8);
+      const randomY = Math.floor(Math.random() * window.innerHeight * 0.8);
+      noButton.style.position = 'absolute';
+      noButton.style.left = ${randomX}px;
+      noButton.style.top = ${randomY}px;
+    });
+
+    document.getElementById('yes').addEventListener('click', () => {
+      alert('¡Sabía que dirías que sí! 🥰');
+    });
+  </script>
+</body>
+</html>
