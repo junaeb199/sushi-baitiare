@@ -44,17 +44,25 @@
 
   <script>
     const noButton = document.getElementById('no');
+    const yesButton = document.getElementById('yes');
 
+    // Evento para mover el botón "No"
     noButton.addEventListener('mouseenter', () => {
-      const randomX = Math.floor(Math.random() * window.innerWidth * 0.8);
-      const randomY = Math.floor(Math.random() * window.innerHeight * 0.8);
+      const randomX = Math.floor(Math.random() * (window.innerWidth - 100));
+      const randomY = Math.floor(Math.random() * (window.innerHeight - 50));
       noButton.style.position = 'absolute';
       noButton.style.left = ${randomX}px;
       noButton.style.top = ${randomY}px;
     });
 
-    document.getElementById('yes').addEventListener('click', () => {
-      alert('¡Sabía que dirías que sí! 🥰');
+    // Evento para mostrar alerta cuando se hace clic en "Sí"
+    yesButton.addEventListener('click', () => {
+      alert('¡Sabía que dirías que sí! 🥰 Nos vemos pronto en el sushi.');
+    });
+
+    // Evento para evitar que "No" haga algo al hacer clic
+    noButton.addEventListener('click', () => {
+      alert('¡No puedes decir que no! 😜');
     });
   </script>
 </body>
